@@ -15,7 +15,7 @@ except:
     # Works locally and on Streamlit Community Cloud
     from snowflake.snowpark import Session
     session = Session.builder.configs(st.secrets["connections"]["snowflake"]).create()
-    st.success(":material/computer: Running locally with secrets")
+    st.success(":material/computer: Running locally or on Streamlit Community Cloud with secrets")
 
 # Query Snowflake version
 version = session.sql("SELECT CURRENT_VERSION()").collect()[0][0]
