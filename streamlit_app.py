@@ -10,12 +10,10 @@ try:
     # Works in Streamlit in Snowflake
     from snowflake.snowpark.context import get_active_session
     session = get_active_session()
-    st.success(":material/cloud: Running in Streamlit in Snowflake")
 except:
     # Works locally and on Streamlit Community Cloud
     from snowflake.snowpark import Session
     session = Session.builder.configs(st.secrets["connections"]["snowflake"]).create()
-    st.success(":material/computer: Running locally or on Streamlit Community Cloud with secrets")
 
 # Query Snowflake version
 version = session.sql("SELECT CURRENT_VERSION()").collect()[0][0]
