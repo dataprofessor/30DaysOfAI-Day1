@@ -1,1 +1,1 @@
-# 30 Days of AI - Day 21
+# 30 Days of AI - Day 1
